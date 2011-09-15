@@ -22,4 +22,5 @@ EOB
 
 else 
     [ -f /etc/cron-apt/action.d/4-openapp_upgrade ] && rm /etc/cron-apt/action.d/4-openapp_upgrade
+    exit 0
 fi
