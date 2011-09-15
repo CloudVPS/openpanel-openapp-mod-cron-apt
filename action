@@ -4,8 +4,8 @@
 CronaptSettings.update() {
     doupdate=$(coreval CronaptSettings enabled)
 
-    [ "$doupdate" = "true" ] && authd openapp-configure-cron-apt on
-    [ "$doupdate" = "false" ] && authd openapp-configure-cron-apt off
+    [ "$doupdate" = "true" ] && authd runscript openapp-configure-cron-apt on
+    [ "$doupdate" = "false" ] && authd runscript openapp-configure-cron-apt off
 }
 
 Module.getconfig() {
