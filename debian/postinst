@@ -30,7 +30,7 @@ case "$1" in
     configure)
         if [ -z $2 ]; then
             echo "Enabling automatic upgrades via cron-apt"
-            /var/openpanel/tool/openapp-configure-cron-apt on
+            /var/openpanel/tools/openapp-configure-cron-apt on
         fi
 
         mkdir -p /var/openpanel/conf/staging/OpenAppCronapt
