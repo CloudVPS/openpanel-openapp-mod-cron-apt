@@ -1,0 +1,25 @@
+#!/bin/bash
+
+action=$(echo $1 | egrep "^(on|off)$")
+
+fatal() {
+    echo $1
+    FATALS=$FATALS+1
+    exit 1
+}
+
+[ -z "$action" ] && fatal "You need to enter 'on' or 'off'"
+
+if [ "$action" = "on" ]; then
+    cat <<EOB > /etc/cron-apt/action.d/4-openapp_upgrade
+dist-upgrade -y -o APT::Get::Show-Upgraded=true
+EOB
+
+    cat <<EOB > /etc/cron-apt/config
+MAILON="upgrade"
+EXITON="error"
+EOB
+
+else 
+    rm /etc/cron-apt/action.d/4-openapp_upgrade
+fi

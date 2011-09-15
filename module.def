@@ -1,0 +1,45 @@
+# ============================================================================
+# This file is part of OpenPanel - The Open Source Control Panel
+# OpenPanel is free software: you can redistribute it and/or modify it 
+# under the terms of the GNU General Public License as published by the Free 
+# Software Foundation, using version 3 of the License.
+#
+# Please note that use of the OpenPanel trademark may be subject to additional 
+# restrictions. For more information, please visit the Legal Information 
+# section of the OpenPanel website on http://www.openpanel.com/
+#
+# OpenPanel OpenAppCronapt.module for configuring DMA
+# ============================================================================
+module OpenAppCronapt			< uuid 2b8ec252-6d9e-45b7-b360-26e8f0d6be6e
+								< version 1.0
+								< languages en_EN
+								< apitype commandline
+								< getconfig true
+								< license GPLv3
+								< author OpenPanel
+								< url http://www.openpanel.com/
+	
+# ============================================================================
+# CLASSES
+# ============================================================================
+class CronaptSettings           < uuid c40832d6-d440-42fa-b3d6-154a3a68fc91
+								< version 1
+								< indexing manual
+								< uniquein class
+								< shortname cronapt-settings
+								< singleton openapp-cronapt-settings
+								< title Upgrades
+								< description Automatic upgrades of software
+								< sortindex 10
+								< icon swupd.png
+								< capabilities update
+
+    bool enabled               : Do automatic upgrades every night
+                                < default true
+                                < gridhide true
+
+# ============================================================================
+# AUTHD
+# ============================================================================
+authd scripts
+	script openapp-configure-cron-apt
