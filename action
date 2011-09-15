@@ -6,6 +6,8 @@ CronaptSettings.update() {
 
     [ "$doupdate" = "true" ] && authd runscript openapp-configure-cron-apt on
     [ "$doupdate" = "false" ] && authd runscript openapp-configure-cron-apt off
+
+    exitquiet
 }
 
 Module.getconfig() {
