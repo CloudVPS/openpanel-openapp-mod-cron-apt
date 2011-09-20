@@ -30,7 +30,7 @@ class CronaptSettings           < uuid c40832d6-d440-42fa-b3d6-154a3a68fc91
 								< singleton openapp-cronapt-settings
 								< title Upgrades
 								< description Automatic upgrades of software
-								< sortindex 10
+								< sortindex 200
 								< icon swupd.png
 								< capabilities update
 
